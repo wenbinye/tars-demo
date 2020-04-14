@@ -1,0 +1,39 @@
+{
+    "name": "wenbinye/tars-rpc-client-demo",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ye Wenbin",
+            "email": "wenbinye@gmail.com"
+        }
+    ],
+    "repositories": {
+        "tars": {
+            "type": "path",
+            "url": "/home/ywb/src/php/tars"
+        },
+        "kuiper": {
+            "type": "path",
+            "url": "/home/ywb/work/kuiper/kuiper"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "app\\servant\\": "./src/"
+        }
+    },
+    "require": {
+        "php": "^7.2",
+        "monolog/monolog": "^2.0",
+        "php-di/php-di": "^6.0",
+        "symfony/event-dispatcher": "^5.0",
+        "wenbinye/tars": "dev-tars-type"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    }
+}

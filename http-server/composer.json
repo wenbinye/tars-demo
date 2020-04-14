@@ -1,0 +1,67 @@
+{
+    "name": "wenbinye/tars-http-server-demo",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ye Wenbin",
+            "email": "wenbinye@gmail.com"
+        }
+    ],
+    "repositories": {
+        "tars": {
+            "type": "path",
+            "url": "/home/ywb/src/php/tars"
+        },
+        "kuiper": {
+            "type": "path",
+            "url": "/home/ywb/work/kuiper/kuiper"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "monolog/monolog": "^2.0",
+        "php-di/php-di": "^6.0",
+        "slim/slim": "^4.3",
+        "symfony/event-dispatcher": "^5.0",
+        "wenbinye/tars": "dev-tars-type"
+    }
+    ,
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "roave/security-advisories": "dev-master",
+        "symfony/finder": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "wenbinye\\tars\\demo\\": "src"
+        }
+    },
+    "scripts": {
+        "package": "wenbinye\\tars\\server\\ServerApplication::package"
+    },
+    "extra": {
+        "tars": {
+            "serverName": "SimpleHttpServer",
+            "manifest": [
+                "composer.json",
+                {
+                    "in": "src"
+                },
+                {
+                    "name": "*.php",
+                    "followLinks": true,
+                    "exclude": [
+                        "phpunit",
+                        "symfony/finder",
+                        "kuiper/vendor",
+                        "tars/vendor"
+                    ],
+                    "in": "vendor"
+                }
+            ]
+        }
+    }
+}
