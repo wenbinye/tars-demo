@@ -8,16 +8,6 @@
             "email": "wenbinye@gmail.com"
         }
     ],
-    "repositories": {
-        "tars": {
-            "type": "path",
-            "url": "/home/ywb/src/php/tars"
-        },
-        "kuiper": {
-            "type": "path",
-            "url": "/home/ywb/work/kuiper/kuiper"
-        }
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
@@ -26,7 +16,7 @@
         "php-di/php-di": "^6.0",
         "slim/slim": "^4.3",
         "symfony/event-dispatcher": "^5.0",
-        "wenbinye/tars": "dev-tars-type"
+        "wenbinye/tars": "^0.1"
     }
     ,
     "require-dev": {
@@ -51,7 +41,6 @@
                     "in": "src"
                 },
                 {
-                    "name": "*.php",
                     "followLinks": true,
                     "exclude": [
                         "phpunit",

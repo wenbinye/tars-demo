@@ -8,33 +8,18 @@
             "email": "wenbinye@gmail.com"
         }
     ],
-    "repositories": {
-        "tars": {
-            "type": "path",
-            "url": "/home/ywb/src/php/tars"
-        },
-        "kuiper": {
-            "type": "path",
-            "url": "/home/ywb/work/kuiper/kuiper"
-        },
-        "tars-gen": {
-            "type": "path",
-            "url": "/home/ywb/src/php/tars-gen"
-        }
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": "^7.2",
         "monolog/monolog": "^2.0",
         "php-di/php-di": "^6.0",
-        "slim/slim": "^4.3",
         "symfony/event-dispatcher": "^5.0",
-        "wenbinye/tars": "dev-tars-type"
+        "wenbinye/tars": "^0.1"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
-        "wenbinye/tars-gen": "dev-master"
+        "wenbinye/tars-gen": "^0.1"
     },
     "autoload": {
         "psr-4": {
@@ -42,7 +27,7 @@
         }
     },
     "scripts": {
-        "deploy": "wenbinye\\tars\\deploy\\Packager::package",
+        "package": "wenbinye\\tars\\server\\ServerApplication::package",
         "gen": "./vendor/bin/tars-gen"
     },
     "extra": {
@@ -54,13 +39,13 @@
                     "in": "src"
                 },
                 {
-                    "name": "*.php",
                     "followLinks": true,
                     "exclude": [
                         "phpunit",
                         "symfony/finder",
                         "kuiper/vendor",
-                        "tars/vendor"
+                        "tars/vendor",
+                        "tars-gen"
                     ],
                     "in": "vendor"
                 }

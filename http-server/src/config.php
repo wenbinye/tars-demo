@@ -2,10 +2,8 @@
 
 return [
     'application' => [
-        'middleware' => [
-            'client' => [
-                // \wenbinye\tars\rpc\middleware\RequestLogMiddleware::class,
-            ],
+        'listeners' => [
+            kuiper\swoole\listener\HttpRequestEventListener::class
         ],
     ]
 ];
