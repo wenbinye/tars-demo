@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'application' => [
-        'listeners' => [
-            kuiper\swoole\listener\HttpRequestEventListener::class
-        ],
+    "application" => [
+        "web" => [
+            "framework" => 'slim'
+        ]
     ]
 ];
