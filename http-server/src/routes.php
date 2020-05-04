@@ -2,10 +2,6 @@
 
 /** @var \Slim\App $app */
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use wenbinye\tars\demo\controllers\IndexController;
 
-$app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!\n");
-    return $response;
-});
+$app->get('/', IndexController::class . ':hello');

@@ -22,7 +22,8 @@
     "require-dev": {
         "phpunit/phpunit": "^8.5",
         "roave/security-advisories": "dev-master",
-        "symfony/finder": "^5.0"
+        "symfony/finder": "^5.0",
+        "wenbinye/tars-gen": "^0.1.0"
     },
     "autoload": {
         "psr-4": {
@@ -30,10 +31,18 @@
         }
     },
     "scripts": {
-        "package": "wenbinye\\tars\\server\\ServerApplication::package"
+        "package": "wenbinye\\tars\\server\\ServerApplication::package",
+        "gen": "./vendor/bin/tars-gen"
     },
     "extra": {
         "tars": {
+            "generator": {
+                "client": {
+                    "servants": {
+                        "Hello": "PHPDemo.PHPTcpServer.HelloObj"
+                    }
+                }
+            },
             "serverName": "SimpleHttpServer",
             "manifest": [
                 "composer.json",
@@ -46,7 +55,8 @@
                         "phpunit",
                         "symfony/finder",
                         "kuiper/vendor",
-                        "tars/vendor"
+                        "tars/vendor",
+                        "tars-gen"
                     ],
                     "in": "vendor"
                 }
