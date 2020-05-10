@@ -5,8 +5,8 @@
 		<server>
 			node=tars.tarsnode.ServerObj@tcp -h {tarsnode} -p 19386 -t 60000
 			deactivating-timeout=3000
-			app=PHPTest
-			server=PHPHttpServer
+			app=PHPDemo
+			server=SimpleHttpServer
 			localip={tarsnode}
 			local=tcp -h 127.0.0.1 -p 18080 -t 3000
 			basepath=.
@@ -26,17 +26,18 @@
 			task_worker_num=1
 			dispatch_mode=2
 			daemonize=0
-			<PHPTest.PHPHttpServer.objAdapter>
+            env_config_file=env
+			<PHPDemo.SimpleHttpServer.objAdapter>
 				allow
 				endpoint=tcp -h {tarsnode} -p 18080 -t 60000
-				handlegroup=PHPTest.PHPHttpServer.objAdapter
+				handlegroup=PHPDemo.SimpleHttpServer.objAdapter
 				maxconns=200000
 				protocol=not_tars
 				queuecap=10000
 				queuetimeout=60000
-				servant=PHPTest.PHPHttpServer.obj
+				servant=PHPDemo.SimpleHttpServer.obj
 				threads=5
-			</PHPTest.PHPHttpServer.objAdapter>
+			</PHPDemo.SimpleHttpServer.objAdapter>
 		</server>
 		<client>
 			asyncthread=3
@@ -47,7 +48,7 @@
 			stat=tars.tarsstat.StatObj
 			property=tars.tarsproperty.PropertyObj
 			report-interval=60000
-			modulename=PHPTest.PHPHttpServer
+			modulename=PHPDemo.SimpleHttpServer
 			sample-rate=100000
 			max-sample-count=50
 		</client>

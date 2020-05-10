@@ -1,0 +1,7 @@
+<tars>
+    <application>
+        <server>
+            env_config_file=env
+        </server>
+    </application>
+</tars>

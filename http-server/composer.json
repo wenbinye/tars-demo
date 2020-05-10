@@ -12,14 +12,13 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.2",
-        "monolog/monolog": "^2.0",
-        "php-di/php-di": "^6.0",
         "slim/slim": "^4.3",
-        "symfony/event-dispatcher": "^5.0",
+        "vlucas/phpdotenv": "^4.1",
         "wenbinye/tars": "^0.1"
     }
     ,
     "require-dev": {
+        "kuiper/component-installer": "^0.1.0",
         "phpunit/phpunit": "^8.5",
         "roave/security-advisories": "dev-master",
         "symfony/finder": "^5.0",
@@ -32,9 +31,14 @@
     },
     "scripts": {
         "package": "wenbinye\\tars\\server\\ServerApplication::package",
+        "container-config": "kuiper\\component\\ComponentInstaller::generate",
         "gen": "./vendor/bin/tars-gen"
     },
     "extra": {
+        "kuiper": {
+            "config-file": "src/container.php",
+            "whitelist": ["wenbinye/tars"]
+        },
         "tars": {
             "generator": {
                 "client": {

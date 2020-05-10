@@ -1,0 +1,26 @@
+{
+    "application": "PHPDemo",
+    "server_name": "SimpleHttpServer",
+    "server_type": "tars_php",
+    "template_name": "wenbinye.php",
+    "node_name": "172.18.0.3",
+    "enable_set": false,
+    "set_name": "",
+    "set_area": "",
+    "set_group": "",
+    "operator": "",
+    "developer": "",
+    "adapters": [
+        {
+            "obj_name": "obj",
+            "bind_ip": "172.18.0.3",
+            "port": 18080,
+            "port_type": "tcp",
+            "protocol": "not_tars",
+            "thread_num": 5,
+            "max_connections": 100000,
+            "queuecap": 50000,
+            "queuetimeout": 20000
+        }
+    ]
+}
