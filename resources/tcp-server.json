@@ -1,6 +1,6 @@
 {
     "application": "PHPDemo",
-    "server_name": "PHPTcpServer1",
+    "server_name": "PHPTcpServer",
     "server_type": "tars_php",
     "template_name": "wenbinye.php",
     "node_name": "172.18.0.3",
