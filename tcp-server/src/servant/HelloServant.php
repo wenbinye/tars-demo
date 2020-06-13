@@ -26,5 +26,4 @@ interface HelloServant
      * @return string
      */
     public function hello($message);
-
 }

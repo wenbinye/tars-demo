@@ -2,6 +2,12 @@
 
 return [
     "application" => [
+        'logging' => [
+            'level' => [
+                'wenbinye.tars' => 'info',
+                'kuiper' => 'info'
+            ]
+        ],
         "web" => [
             "framework" => 'slim'
         ],

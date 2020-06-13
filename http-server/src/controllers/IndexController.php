@@ -5,6 +5,9 @@ namespace wenbinye\tars\demo\controllers;
 
 
 use DI\Annotation\Inject;
+use kuiper\di\annotation\Controller;
+use kuiper\web\AbstractController;
+use kuiper\web\annotation\GetMapping;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Log\LoggerAwareInterface;
@@ -12,7 +15,10 @@ use Psr\Log\LoggerAwareTrait;
 use wenbinye\tars\demo\client\HelloServant;
 use wenbinye\tars\server\Config;
 
-class IndexController implements LoggerAwareInterface
+/**
+ * @Controller()
+ */
+class IndexController extends AbstractController implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
@@ -22,18 +28,21 @@ class IndexController implements LoggerAwareInterface
      */
     private $helloServant;
 
-    public function hello(Request $request, Response $response, $args)
+    /**
+     * @GetMapping("/")
+     */
+    public function hello()
     {
-        $message = $this->helloServant->hello($request->getQueryParams()['name'] ?? "tars");
+        $message = $this->helloServant->hello($this->request->getQueryParams()['name'] ?? "tars");
         $this->logger->info("get message $message");
-        $response->getBody()->write($message ?? '');
-        return $response;
+        $this->response->getBody()->write($message ?? '');
     }
 
-    public function env(Request $request, Response $response)
+    /**
+     * @GetMapping("/env")
+     */
+    public function env()
     {
-        $response->getBody()->write(json_encode(Config::getInstance()->toArray()['tars']));
-
-        return $response->withHeader("content-type", "application/json");
+        $this->response->getBody()->write(json_encode(Config::getInstance()->toArray()['tars']));
     }
 }
