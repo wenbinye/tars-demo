@@ -10,7 +10,7 @@ use wenbinye\tars\protocol\annotation\TarsReturnType;
 $loader = require __DIR__ . '/../vendor/autoload.php';
 
 /**
- * @TarsClient(name="PHPTest.PHPTcpServer.HelloObj")
+ * @TarsClient(name="PHPDemo.PHPTcpServer.HelloObj")
  */
 interface HelloServiceServant {
     /**
@@ -24,7 +24,7 @@ interface HelloServiceServant {
 }
 
 $routeResolver = new InMemoryRouteResolver([
-    Route::fromString("PHPTest.PHPTcpServer.HelloObj@tcp -h 127.0.0.1 -p 18081 -t 3000")
+    Route::fromString("PHPDemo.PHPTcpServer.HelloObj@tcp -h 127.0.0.1 -p 18081 -t 3000")
 ]);
 
 $proxy = TarsClientImpl::builder()

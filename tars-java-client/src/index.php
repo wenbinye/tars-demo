@@ -9,8 +9,8 @@ $loader = require __DIR__ . '/../vendor/autoload.php';
 
 $proxy = TarsClient::builder()
     ->setRouteResolver(new InMemoryRouteResolver([
-        Route::fromString("TestApp.HelloServer.HelloObj@tcp -h 127.0.0.1 -p 18600 -t 3000")
+        Route::fromString("TestApp.HelloServer.HelloObj@tcp -h 127.0.0.1 -p 18601 -t 3000")
     ]))
     ->createProxy(HelloServant::class);
 
-echo $proxy->hello(2020, "world");
+echo $proxy->hello(2, "world"), "\n";

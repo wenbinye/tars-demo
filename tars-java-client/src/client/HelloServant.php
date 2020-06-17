@@ -19,8 +19,8 @@ use wenbinye\tars\protocol\annotation\TarsReturnType;
 interface HelloServant
 {
     /**
-     * @TarsParameter(name = "no", type = "int")
-     * @TarsParameter(name = "name", type = "string")
+     * @TarsParameter(name = "args0", type = "int")
+     * @TarsParameter(name = "args1", type = "string")
      * @TarsReturnType(type = "string")
      *
      * @param int $no

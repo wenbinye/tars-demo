@@ -8,8 +8,6 @@ use DI\Annotation\Inject;
 use kuiper\di\annotation\Controller;
 use kuiper\web\AbstractController;
 use kuiper\web\annotation\GetMapping;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use wenbinye\tars\demo\client\HelloServant;
