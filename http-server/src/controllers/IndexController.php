@@ -41,6 +41,16 @@ class IndexController extends AbstractController implements LoggerAwareInterface
      */
     public function env()
     {
-        $this->response->getBody()->write(json_encode(Config::getInstance()->toArray()['tars']));
+        $this->response->getBody()->write(json_encode(
+            Config::getInstance()->toArray()['tars'],
+            JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+    }
+
+    /**
+     * @GetMapping("/error")
+     */
+    public function showError()
+    {
+        throw new \InvalidArgumentException("invalid parameter");
     }
 }

@@ -9,5 +9,8 @@ return [
         "wenbinye\\tars\\demo\\"
     ],
     "configuration" => [
+        "kuiper\\cache\\CacheConfiguration",
+        "kuiper\\web\\WebConfiguration",
+        "kuiper\\web\\http\\DiactorosHttpMessageFactoryConfiguration"
     ]
 ];
