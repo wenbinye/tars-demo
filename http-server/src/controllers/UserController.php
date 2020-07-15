@@ -16,6 +16,7 @@ use wenbinye\tars\demo\domain\Authority;
 
 /**
  * @Controller()
+ * @LoginOnly
  */
 class UserController extends AbstractController
 {

@@ -3,7 +3,7 @@
     "server_name": "PHPTcpServer",
     "server_type": "tars_php",
     "template_name": "wenbinye.php",
-    "node_name": "172.18.0.3",
+    "node_name": "172.19.0.3",
     "enable_set": false,
     "set_name": "",
     "set_area": "",
@@ -13,7 +13,7 @@
     "adapters": [
         {
             "obj_name": "HelloObj",
-            "bind_ip": "172.18.0.3",
+            "bind_ip": "172.19.0.3",
             "port": "21743",
             "port_type": "tcp",
             "protocol": "tars",

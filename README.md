@@ -47,18 +47,18 @@ $ tars template:save --name wenbinye.php --parent tars.tarsphp.default resources
 添加服务部署：
 
 ```bash
-tars server:deploy --template > /tmp/deploy.json
+tars deploy --template > /tmp/deploy.json
 ```
 
 修改  `/tmp/deploy.json` 文件中参数。
 
 ```bash
-tars server:deploy --json /tmp/deploy.json
+tars deploy --json /tmp/deploy.json
 ```
 
 上传并发布服务：
 
 ```bash
-tars patch:upload PHPDemo.PHPTcpServer --apply PHPTcpServer_20200510003249.tar.gz
+tars patch PHPDemo --apply PHPTcpServer_20200510003249.tar.gz
 ```
 
