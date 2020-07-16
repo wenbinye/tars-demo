@@ -59,6 +59,5 @@ tars deploy --json /tmp/deploy.json
 上传并发布服务：
 
 ```bash
-tars patch PHPDemo --apply PHPTcpServer_20200510003249.tar.gz
+tars patch PHPDemo PHPTcpServer_20200510003249.tar.gz
 ```
-
